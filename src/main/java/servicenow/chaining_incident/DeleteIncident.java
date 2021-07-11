@@ -6,7 +6,7 @@ import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 public class DeleteIncident extends BaseClass {
-    @Test(dependsOnMethods = {"servicenow.chaining_incident.UpdateIncident.updateIncident"})
+    @Test(dependsOnMethods = {"servicenow.chaining_incident.CreateIncidentWithoutBody.createIncidentWithoutBody","servicenow.chaining_incident.UpdateIncident.updateIncident"})
     public void deleteIncident() {
         Response response = RestAssured.given()
                 .contentType(ContentType.JSON)
